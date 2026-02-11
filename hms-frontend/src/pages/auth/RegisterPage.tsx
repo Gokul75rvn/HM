@@ -58,7 +58,7 @@ function RegisterPage() {
     dispatch(setLoading(true));
 
     try {
-      const response = await api.post('/auth/register', {
+      const response = await api.register({
         firstName,
         lastName,
         email: email || undefined,
