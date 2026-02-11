@@ -5,8 +5,8 @@ services:
     region: oregon
     plan: free
     rootDir: hms-backend
-    buildCommand: npm install && npx prisma generate && npm run build
-    startCommand: node dist/src/main
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
     autoDeploy: true
     envVars:
       - key: NODE_ENV
