@@ -5,8 +5,9 @@ services:
     region: oregon
     plan: free
     rootDir: hms-backend
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && npx prisma generate && npm run build
     startCommand: npm run start:prod
+    autoDeploy: true
     envVars:
       - key: NODE_ENV
         value: production
@@ -16,3 +17,12 @@ services:
         sync: false
       - key: JWT_EXPIRES_IN
         value: 7d
+
+  # PostgreSQL Database
+  - type: pserv
+    name: hms-postgres
+    region: oregon
+    plan: free
+    ipAllowList: []
+    databaseName: hms_db
+    databaseUser: hms_user
