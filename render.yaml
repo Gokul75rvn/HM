@@ -6,7 +6,7 @@ services:
     plan: free
     rootDir: hms-backend
     buildCommand: npm install && npx prisma generate && npm run build
-    startCommand: pwd && ls -la dist && node dist/main.js
+    startCommand: node dist/src/main.js
     autoDeploy: true
     envVars:
       - key: NODE_ENV
