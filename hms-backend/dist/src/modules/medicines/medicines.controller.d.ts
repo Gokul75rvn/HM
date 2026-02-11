@@ -1,0 +1,70 @@
+import { MedicinesService } from './medicines.service';
+import { CreateMedicineDto, UpdateMedicineDto } from './medicines.dto';
+export declare class MedicinesController {
+    private readonly service;
+    constructor(service: MedicinesService);
+    create(dto: CreateMedicineDto, req: any): Promise<{
+        id: string;
+        name: string;
+        createdAt: Date;
+        updatedAt: Date;
+        deletedAt: Date | null;
+        unit: string;
+        genericName: string;
+        composition: string;
+        manufacturer: string;
+        batchNumber: string;
+        expiryDate: Date;
+        price: number;
+        stock: number;
+        reorderLevel: number;
+    }>;
+    list(q?: string): import(".prisma/client").Prisma.PrismaPromise<{
+        id: string;
+        name: string;
+        createdAt: Date;
+        updatedAt: Date;
+        deletedAt: Date | null;
+        unit: string;
+        genericName: string;
+        composition: string;
+        manufacturer: string;
+        batchNumber: string;
+        expiryDate: Date;
+        price: number;
+        stock: number;
+        reorderLevel: number;
+    }[]>;
+    update(id: string, dto: UpdateMedicineDto, req: any): Promise<{
+        id: string;
+        name: string;
+        createdAt: Date;
+        updatedAt: Date;
+        deletedAt: Date | null;
+        unit: string;
+        genericName: string;
+        composition: string;
+        manufacturer: string;
+        batchNumber: string;
+        expiryDate: Date;
+        price: number;
+        stock: number;
+        reorderLevel: number;
+    }>;
+    lowStock(): Promise<{
+        id: string;
+        name: string;
+        createdAt: Date;
+        updatedAt: Date;
+        deletedAt: Date | null;
+        unit: string;
+        genericName: string;
+        composition: string;
+        manufacturer: string;
+        batchNumber: string;
+        expiryDate: Date;
+        price: number;
+        stock: number;
+        reorderLevel: number;
+    }[]>;
+}
